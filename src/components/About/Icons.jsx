@@ -11,7 +11,7 @@ import "./icons.css";
 function Icons({ dark }) {
   return (
     <Container className="mt-5">
-      <Row xs={3} sm={3} md={3} lg={3} className="justify-content-center gap-1">
+      <Row xs={3} sm={3} md={3} lg={3} className="justify-content-center gap-4">
         <Col lg={3} md={3} sm={3} className={dark ? "iconDark" : "iconLight"}>
           <FaReact size={70} style={{ color: "#02327a" }} />
           <p>React</p>

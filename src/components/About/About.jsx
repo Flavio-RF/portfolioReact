@@ -16,7 +16,7 @@ function About({ dark }) {
       <h1 className="fs-1 fw-bold  ">Sobre mi</h1>
       <Row xs="auto" sm={1} md={1} lg={2}>
         <Col md={12} className="mt-5 px-5">
-          <span className="fs-2 fw-bolder">
+          <span className="fs-2 fw-bolder ">
             Como inicie en la programación.
           </span>
           <p className="mt-5 text-start lh-lg">
@@ -26,7 +26,7 @@ function About({ dark }) {
             laboral, incentivado por buscar un trabajo mas acorde a mis gustos y
             habilidades en las cuales quiero poder seguir desarrollando.
           </p>
-          <p className="  text-start lh-lg">
+          <p className="text-start lh-lg">
             En el verano de 2021-2022 empece a programar de manera autodidacta
             con cursos de Udemy, al ver que no seria tan facil decidi dar el
             siguiente paso de comenzar a cursar en Hack Academy trabajando con
@@ -37,7 +37,7 @@ function About({ dark }) {
             laboral.
           </p>
         </Col>
-        <Col className="my-5">
+        <Col className="mt-5">
           <span className="fs-2 fw-bolder">Habilidades tecnicas.</span>
           <Icons dark={dark} />
         </Col>
