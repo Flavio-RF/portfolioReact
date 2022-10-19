@@ -2,6 +2,14 @@
   background-color: #2f2f2f;
 }
 
+.text-warning {
+  text-decoration: none !important;
+}
+
+.text-warning:hover {
+  color: rgb(197, 112, 0) !important;
+  text-decoration: none !important;
+}
 /* ================HEADER ACCORDION================ */
 
 /* ================HEADER ACCORDION DARK MODE================ */

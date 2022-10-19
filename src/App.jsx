@@ -18,8 +18,8 @@ function App() {
       <Header />
       <About dark={dark} />
       <Certificates dark={dark} />
-      <Contact dark={dark} />
       <Project dark={dark} />
+      <Contact dark={dark} />
     </>
   );
 }

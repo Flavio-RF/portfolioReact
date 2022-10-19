@@ -44,19 +44,19 @@ function Navegation({ dark, darkTheme }) {
         <Navbar.Collapse>
           <Nav className="ms-auto my-2 me-md-4 my-sm-0">
             <Nav.Link className="text-center" href="#home">
-              Home
+              Inicio
             </Nav.Link>
             <Nav.Link className="text-center" href="#About">
-              About
+              Sobre mi
             </Nav.Link>
             <Nav.Link className="text-center" href="#Certificates">
-              Certificates
+              Certificados
             </Nav.Link>
             <Nav.Link className="text-center" href="#Projects">
-              Projects
+              Proyectos
             </Nav.Link>
             <Nav.Link className="text-center" href="#Contact">
-              Contact
+              Contacto
             </Nav.Link>
           </Nav>
           <Form className="d-flex justify-content-center">
