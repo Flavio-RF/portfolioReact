@@ -1,0 +1,43 @@
+.bg-darkCustom {
+  background-color: #2f2f2f;
+}
+
+/* ================HEADER ACCORDION================ */
+
+/* ================HEADER ACCORDION DARK MODE================ */
+
+.card-headerDark {
+  background-color: #2f2f2f !important;
+  color: #e7e7e7 !important;
+}
+
+.card-headerDark:hover {
+  background-color: #424242 !important;
+  color: black !important;
+}
+
+.card-headerDark:focus {
+  background-color: #e7e7e7 !important;
+  color: black !important;
+}
+
+/* ================HEADER ACCORDION LIGHT MODE================ */
+
+.card-headerCustom {
+  background-color: #e6e6e6 !important;
+  color: black !important;
+}
+
+.card-headerCustom:hover {
+  background-color: #b6b6b6 !important;
+  color: black !important;
+}
+
+.card-headerCustom:focus {
+  background-color: #b6b6b6 !important;
+  color: black !important;
+}
+
+.accordion-header:first-child {
+  background-color: black !important;
+}

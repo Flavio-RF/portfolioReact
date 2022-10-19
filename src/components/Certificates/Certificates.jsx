@@ -1,6 +1,6 @@
 import "./certificates.css";
 import { Card } from "react-bootstrap";
-import { Col, Row, Container, Button } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import Cards from "./Cards";
 import fullStack from "../../assets/img/cursos/HA_FULL-STACK-PART-TIME_CertificadoDeAsistencia_FlavioRodriguez_2022.png";
 import fullStackPdf from "../../assets/img/cursos/HA_FullStack.pdf";
@@ -15,18 +15,22 @@ function Certificates({ dark }) {
         <Col className="mb-5 mb-md-5 mb-sm-5">
           <Card>
             <Card.Img variant="top" src={fullStack} />
-            <Card.Body className={dark && "bg-dark"}>
+            <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="fw-bold">
                 Desarrollador Web Full-Stack
               </Card.Title>
               <Card.Text>
                 Curso realizado en modo part-time, dividido en 4 modulos.
               </Card.Text>
-              <Button variant="primary">
-                <a href={fullStackPdf} download>
-                  Download Resume
+              {dark ? (
+                <a href={fullStackPdf} class="btn btn-outline-light" download>
+                  Download PDF
                 </a>
-              </Button>
+              ) : (
+                <a href={fullStackPdf} class="btn btn-outline-dark" download>
+                  Download PDF
+                </a>
+              )}
             </Card.Body>
           </Card>
         </Col>
