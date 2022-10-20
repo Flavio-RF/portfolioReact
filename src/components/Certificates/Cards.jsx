@@ -17,7 +17,7 @@ import backendAvanzadoPdf from "../../assets/img/cursos/Backend/HA_BACK-END_AVAN
 
 function Cards({ dark }) {
   return (
-    <Accordion defaultActiveKey={["0"]} alwaysOpen>
+    <Accordion>
       <Card>
         <Card.Header className={dark ? "card-headerDark" : "card-headerCustom"}>
           <CustomToggle dark={dark} eventKey="0">
@@ -33,11 +33,11 @@ function Cards({ dark }) {
                 Introducción a HTML, CSS (Boostrap) y JavaScript.
               </Card.Text>
               {dark ? (
-                <a href={frontPdf} class="btn btn-outline-light" download>
+                <a href={frontPdf} className="btn btn-outline-light" download>
                   Descargar PDF
                 </a>
               ) : (
-                <a href={frontPdf} class="btn btn-outline-dark" download>
+                <a href={frontPdf} className="btn btn-outline-dark" download>
                   Descargar PDF
                 </a>
               )}
@@ -60,11 +60,11 @@ function Cards({ dark }) {
                 Desarrollo de aplicaciones web y aplicaciones móviles.
               </Card.Text>
               {dark ? (
-                <a href={reactPdf} class="btn btn-outline-light" download>
+                <a href={reactPdf} className="btn btn-outline-light" download>
                   Descargar PDF
                 </a>
               ) : (
-                <a href={reactPdf} class="btn btn-outline-dark" download>
+                <a href={reactPdf} className="btn btn-outline-dark" download>
                   Descargar PDF
                 </a>
               )}
@@ -89,7 +89,7 @@ function Cards({ dark }) {
               {dark ? (
                 <a
                   href={backendInicialPdf}
-                  class="btn btn-outline-light"
+                  className="btn btn-outline-light"
                   download
                 >
                   Descargar PDF
@@ -97,7 +97,7 @@ function Cards({ dark }) {
               ) : (
                 <a
                   href={backendInicialPdf}
-                  class="btn btn-outline-dark"
+                  className="btn btn-outline-dark"
                   download
                 >
                   Descargar PDF
@@ -124,7 +124,7 @@ function Cards({ dark }) {
               {dark ? (
                 <a
                   href={backendAvanzadoPdf}
-                  class="btn btn-outline-light"
+                  className="btn btn-outline-light"
                   download
                 >
                   Descargar PDF
@@ -132,7 +132,7 @@ function Cards({ dark }) {
               ) : (
                 <a
                   href={backendAvanzadoPdf}
-                  class="btn btn-outline-dark"
+                  className="btn btn-outline-dark"
                   download
                 >
                   Descargar PDF

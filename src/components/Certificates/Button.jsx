@@ -8,7 +8,11 @@ function CustomToggle({ children, eventKey, dark }) {
     <div className="d-grid gap-2">
       <Button
         onClick={decoratedOnClick}
-        variant={dark ? "outline-light" : "outline-dark"}
+        variant={
+          dark
+            ? "outline-light buttonSelectedLight"
+            : "outline-dark buttonSelectedDark"
+        }
       >
         {children}
       </Button>

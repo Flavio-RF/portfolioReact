@@ -7,14 +7,17 @@ import fullStackPdf from "../../assets/img/cursos/HA_FullStack.pdf";
 
 function Certificates({ dark }) {
   return (
-    <Container fluid className={dark ? "bg-dark text-white py-5" : "py-5"}>
-      <h2 id="Certificates" className="fs-1 fw-bold text-center py-5">
-        Certificados
-      </h2>
+    <Container
+      id="Certificates"
+      fluid
+      className={dark ? "bg-dark text-white py-5" : "py-5"}
+    >
+      <hr />
+      <h2 className="fs-1 fw-bold text-center py-4">Certificados</h2>
       <h3 className="fs-3 fw-bolder text-center pb-4">
         Cursos realizados en{" "}
         <a
-          className={dark ? " text-warning" : " text-warning"}
+          className={dark ? " text-warningCustom" : " text-warningCustom"}
           target="_blank"
           href="https://ha.dev"
         >
@@ -33,11 +36,19 @@ function Certificates({ dark }) {
                 Curso realizado en modo part-time, dividido en 4 modulos.
               </Card.Text>
               {dark ? (
-                <a href={fullStackPdf} class="btn btn-outline-light" download>
+                <a
+                  href={fullStackPdf}
+                  className="btn btn-outline-light"
+                  download
+                >
                   Descargar PDF
                 </a>
               ) : (
-                <a href={fullStackPdf} class="btn btn-outline-dark" download>
+                <a
+                  href={fullStackPdf}
+                  className="btn btn-outline-dark"
+                  download
+                >
                   Descargar PDF
                 </a>
               )}
@@ -45,7 +56,7 @@ function Certificates({ dark }) {
           </Card>
         </Col>
         <Col>
-          <Card className="mt-4 mt-sm-4 mt-md-0">
+          <Card className="mt-4 mt-sm-4 mt-md-0 text-center">
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="fw-bold mb-3">
                 Conoce mas en detalle sobre los cursos que he realizado.

@@ -3,7 +3,7 @@ import Certificates from "./components/Certificates/Certificates";
 import Contact from "./components/Contact/Contact";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
-import Project from "./components/Project/Project";
+import Projects from "./components/Project/Projects";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 
@@ -18,7 +18,7 @@ function App() {
       <Header />
       <About dark={dark} />
       <Certificates dark={dark} />
-      <Project dark={dark} />
+      <Projects dark={dark} />
       <Contact dark={dark} />
     </>
   );
