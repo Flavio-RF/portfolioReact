@@ -1,4 +1,4 @@
-import { Container, Card, Col, Row, Fade, Button } from "react-bootstrap";
+import { Container, Card, Col, Row, Collapse, Button } from "react-bootstrap";
 import { useState } from "react";
 
 import Chat from "../../assets/img/Chat.png";
@@ -30,9 +30,9 @@ function Projects({ dark }) {
             <Card.Img variant="top" className="img" src={Chat} />
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="d-flex justify-content-around">
-                <div>Chat</div>
+                <div className="fs-3 mb-2">Chat</div>
               </Card.Title>
-              <div className="d-flex justify-content-between">
+              <div className="d-flex justify-content-between align-items-center">
                 <Button
                   variant={
                     dark
@@ -40,19 +40,19 @@ function Projects({ dark }) {
                       : "outline-dark buttonSelectedDark"
                   }
                   onClick={() => setOpen(!open)}
-                  aria-controls="example-fade-text"
+                  aria-controls="example-Collapse-text"
                   aria-expanded={open}
                 >
                   Ver mas detalles
                 </Button>
                 <ButtonSocial />
               </div>
-              <Fade in={open}>
-                <div id="example-fade-text">
+              <Collapse className="mt-2" in={open}>
+                <div id="example-Collapse-text">
                   Se creeo una aplicacion real-time usando sockets.io, Node.js,
                   Html, Css, JS y MongoDB con Mongoose.
                 </div>
-              </Fade>
+              </Collapse>
             </Card.Body>
           </Card>
         </Col>
@@ -61,9 +61,9 @@ function Projects({ dark }) {
             <Card.Img variant="top" className="img" src={Notas} />
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="d-flex justify-content-around">
-                <div>Notas</div>
+                <div className="fs-3 mb-2">Notas</div>
               </Card.Title>
-              <div className="d-flex justify-content-between">
+              <div className="d-flex justify-content-between align-items-center">
                 <Button
                   variant={
                     dark
@@ -78,12 +78,12 @@ function Projects({ dark }) {
                 </Button>
                 <ButtonSocial />
               </div>
-              <Fade in={open1}>
-                <div id="example-fade-text">
+              <Collapse className="mt-2" in={open1}>
+                <div id="example-Collapse-text">
                   Se creeo un CRUD de notas utilizando sockets.io, Node.js,
                   Html, Css, JS y MongoDB con Mongoose.
                 </div>
-              </Fade>
+              </Collapse>
             </Card.Body>
           </Card>
         </Col>
@@ -92,9 +92,9 @@ function Projects({ dark }) {
             <Card.Img variant="top" className="img" src={Api} />
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="d-flex justify-content-around">
-                <div>API</div>
+                <div className="fs-3 mb-2">API</div>
               </Card.Title>
-              <div className="d-flex justify-content-between">
+              <div className="d-flex justify-content-between align-items-center">
                 <Button
                   variant={
                     dark
@@ -102,19 +102,19 @@ function Projects({ dark }) {
                       : "outline-dark buttonSelectedDark"
                   }
                   onClick={() => setOpen2(!open2)}
-                  aria-controls="example-fade-text"
+                  aria-controls="example-Collapse-text"
                   aria-expanded={open2}
                 >
                   Ver mas detalles
                 </Button>
                 <ButtonSocial />
               </div>
-              <Fade in={open2}>
-                <div id="example-fade-text">
+              <Collapse className="mt-2" in={open2}>
+                <div id="example-Collapse-text ">
                   La idea es poder consumir la API desde Front-end, se trata de
                   solo Back-end con Node.js, Express, MongoDB, Mongoose.
                 </div>
-              </Fade>
+              </Collapse>
             </Card.Body>
           </Card>
         </Col>
