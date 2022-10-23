@@ -1,19 +1,17 @@
 import "./certificates.css";
 import { Card } from "react-bootstrap";
 import { Col, Row, Container } from "react-bootstrap";
-import Cards from "./Cards";
+import CertificateCards from "./CertificateCards";
 import fullStack from "../../assets/img/cursos/HA_FULL-STACK-PART-TIME_CertificadoDeAsistencia_FlavioRodriguez_2022.png";
 import fullStackPdf from "../../assets/img/cursos/HA_FullStack.pdf";
 
 function Certificates({ dark }) {
   return (
-    <Container
-      id="Certificates"
-      fluid
-      className={dark ? "bg-dark text-white py-5" : "py-5"}
-    >
+    <Container fluid className={dark ? "bg-dark text-white py-5" : "py-5"}>
       <hr />
-      <h2 className="fs-1 fw-bold text-center py-4">Certificados</h2>
+      <h2 id="Certificates" className="fs-1 fw-bold text-center py-5">
+        Certificados
+      </h2>
       <h3 className="fs-3 fw-bolder text-center pb-4">
         Cursos realizados en{" "}
         <a
@@ -62,7 +60,7 @@ function Certificates({ dark }) {
                 Conoce mas en detalle sobre los cursos que he realizado.
               </Card.Title>
 
-              <Cards dark={dark} />
+              <CertificateCards dark={dark} />
             </Card.Body>
           </Card>
         </Col>

@@ -6,44 +6,153 @@ import {
   Form,
   Row,
   FloatingLabel,
+  Card,
 } from "react-bootstrap";
 
+import { BsLinkedin } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+
+import { useRef } from "react";
+import emailjs from "emailjs-com";
+
+const contacts = [
+  {
+    id: 0,
+    title: "Email",
+    subtitle: "flavio.r.f@hotmail.com",
+    icon: (
+      <a target="__blank" href="mailto:flavio.r.f@hotmail.com">
+        <HiOutlineMail size={40} />
+      </a>
+    ),
+  },
+  {
+    id: 1,
+    title: "Github",
+    subtitle: "https://github.com/Flavio-RF",
+    icon: (
+      <a target="__blank" href="https://github.com/Flavio-RF">
+        <FaGithub size={40} />
+      </a>
+    ),
+  },
+  {
+    id: 2,
+    title: "Linkedin",
+    subtitle: "https://www.linkedin.com/in/flavio-rodriguez-1aa233215/",
+    icon: (
+      <a
+        target="__blank"
+        href="https://www.linkedin.com/in/flavio-rodriguez-1aa233215/"
+      >
+        <BsLinkedin size={40} />
+      </a>
+    ),
+  },
+];
+
 function Contact({ dark }) {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_wq26p31",
+      "template_94hgaf4",
+      form.current,
+      "13WB63hDKw9UNH_Od"
+    );
+    e.target.reset();
+  };
   return (
-    <Container fluid className={dark ? "bg-dark text-white py-5" : "py-5"}>
+    <Container fluid className={dark ? "bg-dark text-white py-5" : "py-5 "}>
+      <hr />
       <h5 id="Contact" className="fs-1 text-center py-5  fw-bold ">
         Contacto
       </h5>
-      <Row className="justify-content-center">
-        <Col xs={10} sm={8} md={6}>
-          <Form>
+      <Row className="justify-content-center mx-md-3">
+        <Col xs={6} sm={4} md={3} lg={2} className="mx-5">
+          {contacts.map(({ icon, id, subtitle, title }) => {
+            return (
+              <Card
+                className={
+                  dark
+                    ? "text-center bg-dark my-3 border-light rounded-5"
+                    : "text-center my-3 bg-light border-dark rounded-5"
+                }
+                key={id}
+              >
+                <Card.Body>
+                  {icon}
+                  <Card.Title className="my-1">{title}</Card.Title>
+                  <Button
+                    size="sm"
+                    onClick={() =>
+                      navigator.clipboard.writeText(
+                        JSON.parse(JSON.stringify(subtitle, null, ""))
+                      )
+                    }
+                  >
+                    Copy link
+                  </Button>
+                </Card.Body>
+              </Card>
+            );
+          })}
+        </Col>
+        <Col xs={10} sm={8} md={6} lg={6} className="mt-5 mx-5">
+          <Form ref={form} onSubmit={sendEmail}>
             <FloatingLabel
               controlId="floatingInput"
               label="Nombre"
-              className="mb-3 text-dark"
+              className={
+                dark ? "mb-3 bg-light text-dark rounded-4" : "mb-3 rounded-4"
+              }
             >
-              <Form.Control type="text" placeholder="Nombre" required />
+              <Form.Control
+                className="rounded-4"
+                type="text"
+                name="name"
+                placeholder="Nombre"
+                required
+              />
             </FloatingLabel>
             <FloatingLabel
               controlId="floatingPassword"
-              label="Correo"
-              className="mb-3 text-dark"
+              label="Email"
+              className={
+                dark ? "mb-3 bg-light text-dark rounded-4" : "mb-3 rounded-4"
+              }
             >
-              <Form.Control type="email" placeholder="Email" required />
+              <Form.Control
+                className="rounded-4"
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
             </FloatingLabel>
             <FloatingLabel
               controlId="floatingTextarea2"
               label="Mensaje"
-              className="mb-3 text-dark"
+              className={
+                dark ? "mb-3 bg-light text-dark rounded-4" : "mb-3 rounded-4"
+              }
             >
               <Form.Control
+                className="rounded-4"
                 as="textarea"
+                name="message"
                 placeholder="Leave a comment here"
                 required
                 style={{ height: "100px" }}
               />
             </FloatingLabel>
-            <Button size="lg">Enviar</Button>
+            <Button type="submit" size="lg">
+              Enviar mensaje
+            </Button>
           </Form>
         </Col>
       </Row>
