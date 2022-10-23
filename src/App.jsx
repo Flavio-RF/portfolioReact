@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Project/Projects";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [dark, setDark] = useState(false);
@@ -20,6 +21,7 @@ function App() {
       <Certificates dark={dark} />
       <Projects dark={dark} />
       <Contact dark={dark} />
+      <Footer dark={dark} />
     </>
   );
 }
