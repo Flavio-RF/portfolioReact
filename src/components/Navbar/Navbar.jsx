@@ -1,10 +1,13 @@
 import "./navbar.css";
 import { useEffect, useState } from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import {
+  Container,
+  Offcanvas,
+  Button,
+  Form,
+  Navbar,
+  Nav,
+} from "react-bootstrap";
 import { BsFillMoonFill } from "react-icons/bs";
 import { GrSolaris } from "react-icons/gr";
 
@@ -30,47 +33,56 @@ function Navegation({ dark, darkTheme }) {
 
   return (
     <Navbar
-      className={(y < 300) & (width > 768) & dark && "bg-transparent"}
+      className={dark ? "bg-DarkCustom" : "bg-LightCustom"}
       fixed="top"
-      variant={dark && "dark"}
-      bg={dark ? "dark" : "light"}
       expand="md"
     >
       <Container>
-        <Navbar.Brand className="fw-bold fs-5" href="#">
-          {"<"} FR {"/>"}
+        <Navbar.Brand className="fw-bold fs-3 text-white" href="#">
+          {"<"} <span className="text-primary">FR</span> {"/>"}
         </Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse>
-          <Nav className="ms-auto my-2 me-md-4 my-sm-0">
-            <Nav.Link className="text-center" href="#home">
-              Inicio
-            </Nav.Link>
-            <Nav.Link className="text-center" href="#About">
-              Sobre mi
-            </Nav.Link>
-            <Nav.Link className="text-center" href="#Certificates">
-              Certificados
-            </Nav.Link>
-            <Nav.Link className="text-center" href="#Projects">
-              Proyectos
-            </Nav.Link>
-            <Nav.Link className="text-center" href="#Contact">
-              Contacto
-            </Nav.Link>
-          </Nav>
-          <Form className="d-flex justify-content-center">
-            {dark ? (
-              <Button onClick={darkTheme} variant="outline-light">
-                <BsFillMoonFill />
-              </Button>
-            ) : (
-              <Button onClick={darkTheme} variant="outline-dark">
-                <GrSolaris />
-              </Button>
-            )}
-          </Form>
-        </Navbar.Collapse>
+        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-sm`} />
+        <Navbar.Offcanvas
+          id={`offcanvasNavbar-expand-sm`}
+          aria-labelledby={`offcanvasNavbarLabel-expand-sm`}
+          placement="end"
+        >
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-sm`}>
+              Menu
+            </Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body className="ms-auto my-2 me-md-4 my-auto">
+            <Nav>
+              <Nav.Link className="text-center" href="#home">
+                Inicio
+              </Nav.Link>
+              <Nav.Link className="text-center" href="#About">
+                Sobre mi
+              </Nav.Link>
+              <Nav.Link className="text-center" href="#Certificates">
+                Certificados
+              </Nav.Link>
+              <Nav.Link className="text-center" href="#Projects">
+                Proyectos
+              </Nav.Link>
+              <Nav.Link className="text-center" href="#Contact">
+                Contacto
+              </Nav.Link>
+            </Nav>
+            <Form className="ms-md-3">
+              {dark ? (
+                <Button onClick={darkTheme} variant="outline-light">
+                  <BsFillMoonFill />
+                </Button>
+              ) : (
+                <Button onClick={darkTheme} variant="outline-dark">
+                  <GrSolaris />
+                </Button>
+              )}
+            </Form>
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
       </Container>
     </Navbar>
   );

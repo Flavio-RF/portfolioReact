@@ -1,0 +1,38 @@
+/* =================NavBarDark====================== */
+
+.bg-DarkCustom {
+  background: rgba(39, 39, 39, 0.7) !important;
+  backdrop-filter: saturate(50%) blur(8px);
+  height: 4rem;
+}
+
+.bg-DarkCustom .nav-link {
+  color: #ffff !important;
+  font-weight: 500;
+}
+
+.bg-DarkCustom .nav-link:hover {
+  color: #1561a3 !important;
+}
+
+/* =================NavBarLight====================== */
+
+.bg-LightCustom {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: saturate(50%) blur(8px);
+  height: 4rem;
+}
+
+.bg-LightCustom .nav-link {
+  color: #213547 !important;
+  font-weight: 500;
+}
+
+.bg-LightCustom .nav-link:hover {
+  color: #1561a3 !important;
+}
+
+/* .offcanvas {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  max-width: 40% !important;
+} */
