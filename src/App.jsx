@@ -9,7 +9,7 @@ import { useState } from "react";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
   const darkTheme = () => {
     !dark ? setDark(true) : setDark(false);
   };

@@ -8,8 +8,7 @@ import {
   Navbar,
   Nav,
 } from "react-bootstrap";
-import { BsFillMoonFill } from "react-icons/bs";
-import { GrSolaris } from "react-icons/gr";
+import { BsLightbulbFill } from "react-icons/bs";
 
 function Navegation({ dark, darkTheme }) {
   const [y, setY] = useState(window.scrollY);
@@ -46,38 +45,44 @@ function Navegation({ dark, darkTheme }) {
           id={`offcanvasNavbar-expand-sm`}
           aria-labelledby={`offcanvasNavbarLabel-expand-sm`}
           placement="end"
+          className="offcanvasCustomLight"
         >
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-sm`}>
-              Menu
-            </Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body className="ms-auto my-2 me-md-4 my-auto">
-            <Nav>
-              <Nav.Link className="text-center" href="#home">
+          <Offcanvas.Header closeButton className="ms-auto"></Offcanvas.Header>
+          <Offcanvas.Body
+            className={
+              width >= 768
+                ? "ms-auto my-2 me-md-4 my-auto"
+                : "d-flex  flex-column"
+            }
+          >
+            <Nav className="text-center">
+              <Nav.Link className={width <= 768 && "my-3"} href="#home">
                 Inicio
               </Nav.Link>
-              <Nav.Link className="text-center" href="#About">
+              <Nav.Link className={width <= 768 && "my-3"} href="#About">
                 Sobre mi
               </Nav.Link>
-              <Nav.Link className="text-center" href="#Certificates">
+              <Nav.Link className={width <= 768 && "my-3"} href="#Certificates">
                 Certificados
               </Nav.Link>
-              <Nav.Link className="text-center" href="#Projects">
+              <Nav.Link className={width <= 768 && "my-3"} href="#Projects">
                 Proyectos
               </Nav.Link>
-              <Nav.Link className="text-center" href="#Contact">
+              <Nav.Link className={width <= 768 && "my-3"} href="#Contact">
                 Contacto
               </Nav.Link>
             </Nav>
-            <Form className="ms-md-3">
+            <Form className={width <= 768 ? "text-center my-3" : "ms-md-3"}>
               {dark ? (
-                <Button onClick={darkTheme} variant="outline-light">
-                  <BsFillMoonFill />
+                <Button
+                  onClick={darkTheme}
+                  variant={width <= 768 ? "outline-dark" : "outline-light"}
+                >
+                  <BsLightbulbFill size={24} />
                 </Button>
               ) : (
                 <Button onClick={darkTheme} variant="outline-dark">
-                  <GrSolaris />
+                  <BsLightbulbFill size={24} style={{ color: "yellow" }} />
                 </Button>
               )}
             </Form>

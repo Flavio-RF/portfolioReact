@@ -32,7 +32,17 @@
   color: #1561a3 !important;
 }
 
-/* .offcanvas {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  max-width: 40% !important;
-} */
+@media (max-width: 768px) {
+  .offcanvas {
+    max-width: 50% !important;
+  }
+
+  .offcanvasCustomLight {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: saturate(50%) blur(8px);
+  }
+
+  .offcanvasCustomDark {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+  }
+}
