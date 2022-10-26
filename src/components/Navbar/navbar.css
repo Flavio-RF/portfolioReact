@@ -32,7 +32,7 @@
   color: #1561a3 !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 765px) {
   .offcanvas {
     max-width: 50% !important;
   }

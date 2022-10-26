@@ -4,9 +4,9 @@ import Contact from "./components/Contact/Contact";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Project/Projects";
+import Footer from "./components/Footer/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
-import Footer from "./components/Footer/Footer";
 
 function App() {
   const [dark, setDark] = useState(true);
@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Navbar setDatk={setDark} dark={dark} darkTheme={darkTheme} />
-      <Header />
+      <Header dark={dark} />
       <About dark={dark} />
       <Certificates dark={dark} />
       <Projects dark={dark} />

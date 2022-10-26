@@ -1,6 +1,6 @@
 import { FaGithub } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
-import { Card, Badge } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 function ButtonSocial() {
   return (

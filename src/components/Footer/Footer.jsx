@@ -8,12 +8,12 @@ function Footer({ dark }) {
         fluid
         className={dark ? "text-center bg-light" : "text-center bg-dark"}
       >
-        <Row xs={1} className="align-items-center py-2">
+        <Row xs={1} className="align-items-center">
           <span></span>
           <Col sm={3}>
             <Nav className="justify-content-center">
               <Nav.Item>
-                <Nav.Link className="fs-2 mb-2 tex-white" href="#home">
+                <Nav.Link className="fs-3  " href="#home">
                   {"<"}FR{"/>"}{" "}
                 </Nav.Link>
               </Nav.Item>

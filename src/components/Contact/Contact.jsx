@@ -13,7 +13,7 @@ import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 
 const contacts = [
@@ -23,7 +23,7 @@ const contacts = [
     subtitle: "flavio.r.f@hotmail.com",
     icon: (
       <a target="__blank" href="mailto:flavio.r.f@hotmail.com">
-        <HiOutlineMail size={40} />
+        <HiOutlineMail className="iconContact" size={40} />
       </a>
     ),
   },
@@ -33,7 +33,7 @@ const contacts = [
     subtitle: "https://github.com/Flavio-RF",
     icon: (
       <a target="__blank" href="https://github.com/Flavio-RF">
-        <FaGithub size={40} />
+        <FaGithub className="iconContact" size={40} />
       </a>
     ),
   },
@@ -54,6 +54,7 @@ const contacts = [
 
 function Contact({ dark }) {
   const form = useRef();
+  const [copied, setCopied] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -66,6 +67,7 @@ function Contact({ dark }) {
     );
     e.target.reset();
   };
+
   return (
     <Container fluid className={dark ? "bg-dark text-white py-5" : "py-5 "}>
       <hr />
@@ -88,6 +90,7 @@ function Contact({ dark }) {
                   {icon}
                   <Card.Title className="my-1">{title}</Card.Title>
                   <Button
+                    variant={dark && copied ? "outline-light" : "outline-dark"}
                     size="sm"
                     onClick={() =>
                       navigator.clipboard.writeText(
@@ -95,7 +98,7 @@ function Contact({ dark }) {
                       )
                     }
                   >
-                    Copy link
+                    Copiar enlace
                   </Button>
                 </Card.Body>
               </Card>

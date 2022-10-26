@@ -2,3 +2,11 @@ input,
 textarea {
   background-color: transparent !important;
 }
+
+.iconContact {
+  color: #0a0a0a;
+}
+
+.iconContact:hover {
+  color: #0a0a0abd;
+}
