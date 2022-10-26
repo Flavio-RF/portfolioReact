@@ -90,15 +90,16 @@ function Contact({ dark }) {
                   {icon}
                   <Card.Title className="my-1">{title}</Card.Title>
                   <Button
-                    variant={dark && copied ? "outline-light" : "outline-dark"}
+                    variant={dark ? "outline-light" : "outline-dark"}
                     size="sm"
                     onClick={() =>
                       navigator.clipboard.writeText(
-                        JSON.parse(JSON.stringify(subtitle, null, ""))
+                        JSON.parse(JSON.stringify(subtitle, null, "")),
+                        setCopied(true)
                       )
                     }
                   >
-                    Copiar enlace
+                    Copiar enlace.
                   </Button>
                 </Card.Body>
               </Card>

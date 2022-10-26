@@ -1,5 +1,7 @@
 import { Container, Card, Col, Row, Collapse, Button } from "react-bootstrap";
 import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
+import { TbWorld } from "react-icons/tb";
 
 import Chat from "../../assets/img/Chat.png";
 import Notas from "../../assets/img/Notas.png";
@@ -45,7 +47,20 @@ function Projects({ dark }) {
                 >
                   Ver mas detalles
                 </Button>
-                <ButtonSocial />
+                <div>
+                  <Card.Link
+                    href="https://github.com/Flavio-RF/Chat"
+                    target="_blank"
+                  >
+                    <FaGithub className="buttonSocial" size={30} />
+                  </Card.Link>
+                  <Card.Link
+                    href="https://app-firstchattest.herokuapp.com/"
+                    target="_blank"
+                  >
+                    <TbWorld className="buttonSocial" size={30} />
+                  </Card.Link>
+                </div>
               </div>
               <Collapse className="mt-2" in={open}>
                 <div id="example-Collapse-text">
@@ -76,7 +91,20 @@ function Projects({ dark }) {
                 >
                   Ver mas detalles
                 </Button>
-                <ButtonSocial />
+                <div>
+                  <Card.Link
+                    href="https://github.com/Flavio-RF/notes"
+                    target="_blank"
+                  >
+                    <FaGithub className="buttonSocial" size={30} />
+                  </Card.Link>
+                  <Card.Link
+                    href="https://socket-crud-notas.herokuapp.com/"
+                    target="_blank"
+                  >
+                    <TbWorld className="buttonSocial" size={30} />
+                  </Card.Link>
+                </div>
               </div>
               <Collapse className="mt-2" in={open1}>
                 <div id="example-Collapse-text">
@@ -107,12 +135,25 @@ function Projects({ dark }) {
                 >
                   Ver mas detalles
                 </Button>
-                <ButtonSocial />
+                <div>
+                  <Card.Link
+                    href="https://github.com/Flavio-RF/ProyectoFinal-Backend-avanzado"
+                    target="_blank"
+                  >
+                    <FaGithub className="buttonSocial" size={30} />
+                  </Card.Link>
+                  <Card.Link
+                    href="https://proyecto-final-backend-avanzado.vercel.app/"
+                    target="_blank"
+                  >
+                    <TbWorld className="buttonSocial" size={30} />
+                  </Card.Link>
+                </div>
               </div>
               <Collapse className="mt-2" in={open2}>
                 <div id="example-Collapse-text ">
-                  La idea es poder consumir la API desde Front-end, se trata de
-                  solo Back-end con Node.js, Express, MongoDB, Mongoose.
+                  Es un proyecto backend que se debe consumir desde Front-end,
+                  se desarrollo utilizando Node.js, Express, MongoDB, Mongoose.
                 </div>
               </Collapse>
             </Card.Body>
