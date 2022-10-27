@@ -37,7 +37,10 @@ function Navegation({ dark, darkTheme }) {
       expand="md"
     >
       <Container>
-        <Navbar.Brand className="fw-bold fs-3 text-white" href="#">
+        <Navbar.Brand
+          className={!dark ? "fw-bold fs-3" : "fw-bold fs-3 text-white"}
+          href="#"
+        >
           {"<"} <span className="text-primary">FR</span> {"/>"}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-sm`} />

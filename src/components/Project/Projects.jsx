@@ -7,7 +7,6 @@ import Chat from "../../assets/img/Chat.png";
 import Notas from "../../assets/img/Notas.png";
 import Api from "../../assets/img/API.png";
 import "./project.css";
-import ButtonSocial from "./ButtonSocial";
 
 function Projects({ dark }) {
   const [open, setOpen] = useState(false);

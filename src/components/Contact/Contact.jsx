@@ -99,7 +99,7 @@ function Contact({ dark }) {
                       )
                     }
                   >
-                    Copiar enlace.
+                    Copiar enlace
                   </Button>
                 </Card.Body>
               </Card>
