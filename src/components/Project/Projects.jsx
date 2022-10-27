@@ -3,9 +3,9 @@ import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 
-import Chat from "../../assets/img/Chat.png";
-import Notas from "../../assets/img/Notas.png";
-import Api from "../../assets/img/API.png";
+import Chat from "../../assets/img/chat.PNG";
+import Notas from "../../assets/img/notas.PNG";
+import Api from "../../assets/img/api.PNG";
 import "./project.css";
 
 function Projects({ dark }) {
