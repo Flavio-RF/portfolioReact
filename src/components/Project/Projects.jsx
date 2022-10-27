@@ -28,12 +28,7 @@ function Projects({ dark }) {
       >
         <Col>
           <Card border={!dark && "dark"} className="h-100">
-            <Card.Img
-              variant="top"
-              className="img"
-              src="/chat.png"
-              alt="Chat"
-            />
+            <Card.Img variant="top" className="img" src={Chat} alt="Chat" />
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="d-flex justify-content-around">
                 <div className="fs-3 mb-2">Chat</div>
@@ -77,12 +72,7 @@ function Projects({ dark }) {
         </Col>
         <Col>
           <Card border={!dark && "dark"} className="h-100">
-            <Card.Img
-              variant="top"
-              className="img"
-              src="/notas.png"
-              alt="Notas"
-            />
+            <Card.Img variant="top" className="img" src={Notas} alt="Notas" />
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="d-flex justify-content-around">
                 <div className="fs-3 mb-2">Notas</div>
@@ -126,12 +116,7 @@ function Projects({ dark }) {
         </Col>
         <Col>
           <Card border={!dark && "dark"} className="h-100">
-            <Card.Img
-              variant="top"
-              className="img"
-              src="/api.png"
-              alt="picture profile"
-            />
+            <Card.Img variant="top" className="img" src={Api} alt="api" />
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="d-flex justify-content-around">
                 <div className="fs-3 mb-2">API</div>
