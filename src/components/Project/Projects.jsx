@@ -3,9 +3,6 @@ import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 
-import Chat from "../../assets/img/chat.png";
-import Notas from "../../assets/img/notas.png";
-import Api from "../../assets/img/api.png";
 import "./project.css";
 
 function Projects({ dark }) {
@@ -28,7 +25,7 @@ function Projects({ dark }) {
       >
         <Col>
           <Card border={!dark && "dark"} className="h-100">
-            <Card.Img variant="top" className="img" src={Chat} />
+            <Card.Img variant="top" className="img" src="/projects/chat.png" />
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="d-flex justify-content-around">
                 <div className="fs-3 mb-2">Chat</div>
@@ -72,7 +69,7 @@ function Projects({ dark }) {
         </Col>
         <Col>
           <Card border={!dark && "dark"} className="h-100">
-            <Card.Img variant="top" className="img" src={Notas} />
+            <Card.Img variant="top" className="img" src="/projects/notas.png" />
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="d-flex justify-content-around">
                 <div className="fs-3 mb-2">Notas</div>
@@ -116,7 +113,7 @@ function Projects({ dark }) {
         </Col>
         <Col>
           <Card border={!dark && "dark"} className="h-100">
-            <Card.Img variant="top" className="img" src={Api} />
+            <Card.Img variant="top" className="img" src="/projects/api.png" />
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="d-flex justify-content-around">
                 <div className="fs-3 mb-2">API</div>
