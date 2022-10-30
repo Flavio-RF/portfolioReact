@@ -45,7 +45,7 @@ function Header() {
           <span
             className={
               width.dynamicWidth > 500
-                ? "home__title "
+                ? "home__title fw-bold"
                 : "fs-1 text-primary fw-bold"
             }
           >
@@ -54,7 +54,7 @@ function Header() {
           <span
             className={
               width.dynamicWidth > 500
-                ? "home__title--secondary"
+                ? "home__title--secondary fw-bold"
                 : "fs-2 text-white fw-bold"
             }
           >

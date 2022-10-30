@@ -6,15 +6,22 @@ import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Project/Projects";
 import Footer from "./components/Footer/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const ThemeContext = createContext();
 
 function App() {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(
+    localStorage.getItem("dark-mode") === "true"
+  );
+
+  useEffect(() => {
+    localStorage.setItem("dark-mode", dark);
+  }, [dark]);
+
   const toggleTheme = () => {
     setDark((prev) => !prev);
-    // segunel valor anterior, cambio al opuesto (dark ? light o al contrario)
+    // segun el valor anterior, cambio al opuesto (dark ? light o al contrario)
   };
   return (
     <ThemeContext.Provider value={{ dark, toggleTheme }}>

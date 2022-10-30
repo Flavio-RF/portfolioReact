@@ -10,28 +10,12 @@ import {
 } from "react-bootstrap";
 import { BsLightbulbFill } from "react-icons/bs";
 import { ThemeContext } from "../../App";
+import useWindowsDimensions from "../../hooks/useWindowsDimensions";
 
 function Navegation() {
   const { dark, toggleTheme } = useContext(ThemeContext);
 
-  const [y, setY] = useState(window.scrollY);
-  const [width, setWidth] = useState(window.innerWidth);
-
-  const handleNavigation = () => {
-    setY(window.scrollY);
-    setWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    setY(window.scrollY);
-    window.addEventListener("scroll", handleNavigation);
-    window.addEventListener("resize", handleNavigation);
-
-    return () => {
-      window.removeEventListener("scroll", handleNavigation);
-      window.removeEventListener("resize", handleNavigation);
-    };
-  }, [handleNavigation]);
+  const { width } = useWindowsDimensions();
 
   return (
     <Navbar

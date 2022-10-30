@@ -13,9 +13,9 @@ import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
-import { useContext, useRef, useState } from "react";
-import emailjs from "emailjs-com";
+import { useContext, useState } from "react";
 import { ThemeContext } from "../../App";
+import useButtons from "../../hooks/useButtons";
 
 const contacts = [
   {
@@ -55,21 +55,9 @@ const contacts = [
 
 function Contact() {
   const { dark } = useContext(ThemeContext);
+  const { isLoading, send, form, sendEmail } = useButtons();
 
-  const form = useRef();
   const [copied, setCopied] = useState(false);
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs.sendForm(
-      "service_wq26p31",
-      "template_94hgaf4",
-      form.current,
-      "13WB63hDKw9UNH_Od"
-    );
-    e.target.reset();
-  };
 
   return (
     <Container fluid className={dark ? "bg-dark text-white py-5" : "py-5 "}>
@@ -78,7 +66,7 @@ function Contact() {
         Contacto
       </h5>
       <Row className="justify-content-center mx-md-3">
-        <Col xs={6} sm={4} md={3} lg={2} xxl={2} className="mx-5">
+        <Col xs={7} sm={4} md={3} lg={2} xxl={2} className="mx-5">
           {contacts.map(({ icon, id, subtitle, title }) => {
             return (
               <Card
@@ -157,8 +145,14 @@ function Contact() {
                 style={{ height: "100px" }}
               />
             </FloatingLabel>
-            <Button type="submit" size="lg">
-              Enviar mensaje
+            <Button
+              type="submit"
+              size="lg"
+              variant={!send ? "primary" : "success"}
+              disabled={isLoading || send}
+            >
+              {isLoading ? "Enviando..." : !send && "Enviar mensaje"}
+              {send && !isLoading && "Mensaje enviado"}
             </Button>
           </Form>
         </Col>

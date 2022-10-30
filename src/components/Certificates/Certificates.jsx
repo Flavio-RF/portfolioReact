@@ -1,9 +1,10 @@
 import "./certificates.css";
-import { Card } from "react-bootstrap";
-import { Col, Row, Container } from "react-bootstrap";
+import { Col, Row, Container, Card } from "react-bootstrap";
+
 import CertificateCards from "./CertificateCards";
 import fullStack from "../../assets/img/cursos/HA_FULL-STACK-PART-TIME_CertificadoDeAsistencia_FlavioRodriguez_2022.png";
 import fullStackPdf from "../../assets/img/cursos/HA_FullStack.pdf";
+
 import { ThemeContext } from "../../App";
 import { useContext } from "react";
 
@@ -15,6 +16,8 @@ function Certificates() {
       fluid
       className={dark ? "bg-dark text-white py-5 p-md-5" : "py-5 p-md-5"}
     >
+      <hr />
+
       <h2 id="Certificates" className="fs-1 fw-bold text-center py-5">
         Certificados
       </h2>

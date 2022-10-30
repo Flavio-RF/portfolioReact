@@ -12,12 +12,13 @@ import { ThemeContext } from "../../App";
 function Projects() {
   const { dark } = useContext(ThemeContext);
 
-  const [open, setOpen] = useState(false);
-  const [open1, setOpen1] = useState(false);
-  const [open2, setOpen2] = useState(false);
+  const [openProjectChat, setOpenProjectChat] = useState(false);
+  const [openProjectNotas, setOpenProjectNotas] = useState(false);
+  const [openProjectApi, setOpenProjectApi] = useState(false);
 
   return (
     <Container fluid className={dark ? "bg-dark text-white p-5" : "p-5"}>
+      <hr />
       <h4 id="Projects" className="fs-1 fw-bold text-center py-5 mb-5">
         Mis proyectos personales
       </h4>
@@ -42,9 +43,9 @@ function Projects() {
                       ? "outline-light buttonSelectedLight"
                       : "outline-dark buttonSelectedDark"
                   }
-                  onClick={() => setOpen(!open)}
+                  onClick={() => setOpenProjectChat(!openProjectChat)}
                   aria-controls="example-Collapse-text"
-                  aria-expanded={open}
+                  aria-expanded={openProjectChat}
                 >
                   Ver mas detalles
                 </Button>
@@ -63,7 +64,7 @@ function Projects() {
                   </Card.Link>
                 </div>
               </div>
-              <Collapse className="mt-2" in={open}>
+              <Collapse className="mt-2" in={openProjectChat}>
                 <div id="example-Collapse-text">
                   Se creeo una aplicacion real-time usando sockets.io, Node.js,
                   Html, Css, JS y MongoDB con Mongoose.
@@ -86,9 +87,9 @@ function Projects() {
                       ? "outline-light buttonSelectedLight"
                       : "outline-dark buttonSelectedDark"
                   }
-                  onClick={() => setOpen1(!open1)}
+                  onClick={() => setOpenProjectNotas(!openProjectNotas)}
                   aria-controls="example-fade-text"
-                  aria-expanded={open1}
+                  aria-expanded={openProjectNotas}
                 >
                   Ver mas detalles
                 </Button>
@@ -107,7 +108,7 @@ function Projects() {
                   </Card.Link>
                 </div>
               </div>
-              <Collapse className="mt-2" in={open1}>
+              <Collapse className="mt-2" in={openProjectNotas}>
                 <div id="example-Collapse-text">
                   Se creeo un CRUD de notas utilizando sockets.io, Node.js,
                   Html, Css, JS y MongoDB con Mongoose.
@@ -130,9 +131,9 @@ function Projects() {
                       ? "outline-light buttonSelectedLight"
                       : "outline-dark buttonSelectedDark"
                   }
-                  onClick={() => setOpen2(!open2)}
+                  onClick={() => setOpenProjectApi(!openProjectApi)}
                   aria-controls="example-Collapse-text"
-                  aria-expanded={open2}
+                  aria-expanded={openProjectApi}
                 >
                   Ver mas detalles
                 </Button>
@@ -151,7 +152,7 @@ function Projects() {
                   </Card.Link>
                 </div>
               </div>
-              <Collapse className="mt-2" in={open2}>
+              <Collapse className="mt-2" in={openProjectApi}>
                 <div id="example-Collapse-text ">
                   Es un proyecto backend que se debe consumir desde Front-end,
                   se desarrollo utilizando Node.js, Express, MongoDB, Mongoose.
