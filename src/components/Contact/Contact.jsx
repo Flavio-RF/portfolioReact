@@ -13,8 +13,9 @@ import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import emailjs from "emailjs-com";
+import { ThemeContext } from "../../App";
 
 const contacts = [
   {
@@ -52,7 +53,9 @@ const contacts = [
   },
 ];
 
-function Contact({ dark }) {
+function Contact() {
+  const { dark } = useContext(ThemeContext);
+
   const form = useRef();
   const [copied, setCopied] = useState(false);
 
@@ -75,7 +78,7 @@ function Contact({ dark }) {
         Contacto
       </h5>
       <Row className="justify-content-center mx-md-3">
-        <Col xs={6} sm={4} md={3} lg={2} className="mx-5">
+        <Col xs={6} sm={4} md={3} lg={2} xxl={2} className="mx-5">
           {contacts.map(({ icon, id, subtitle, title }) => {
             return (
               <Card
@@ -106,7 +109,7 @@ function Contact({ dark }) {
             );
           })}
         </Col>
-        <Col xs={10} sm={8} md={6} lg={6} className="mt-5 mx-5">
+        <Col xs={10} sm={8} md={6} lg={6} xxl={4} className="mt-5 mx-5">
           <Form ref={form} onSubmit={sendEmail}>
             <FloatingLabel
               controlId="floatingInput"

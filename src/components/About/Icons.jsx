@@ -87,7 +87,7 @@ function Icons({ dark }) {
               key={id}
               lg={3}
               md={3}
-              sm={3}
+              xs={5}
               className={dark ? "iconDark px-0" : "iconLight px-0"}
             >
               {icon}

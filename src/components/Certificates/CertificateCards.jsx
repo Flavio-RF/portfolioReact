@@ -15,6 +15,8 @@ import frontPdf from "../../assets/img/cursos/Frontend/HA_FRONT_Certificado.pdf"
 import reactPdf from "../../assets/img/cursos/Frontend/HA_REACT_Certificado.pdf";
 import backendInicialPdf from "../../assets/img/cursos/Backend/HA_BACK-END_INICIAL_Certificado.pdf";
 import backendAvanzadoPdf from "../../assets/img/cursos/Backend/HA_BACK-END_AVANZADO_Certificado.pdf";
+import { ThemeContext } from "../../App";
+import { useContext } from "react";
 
 const certificates = [
   {
@@ -47,7 +49,9 @@ const certificates = [
   },
 ];
 
-function Cards({ dark }) {
+function Cards() {
+  const { dark } = useContext(ThemeContext);
+
   return (
     <Accordion>
       {certificates.map(

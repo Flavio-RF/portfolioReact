@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { Col, Container, Nav, Row } from "react-bootstrap";
+import { ThemeContext } from "../../App";
 import "./footer.css";
 
-function Footer({ dark }) {
+function Footer() {
+  const { dark } = useContext(ThemeContext);
+
   return (
     <footer>
       <Container
@@ -14,7 +18,7 @@ function Footer({ dark }) {
             <Nav className="justify-content-center">
               <Nav.Item>
                 <Nav.Link className="fs-3  " href="#home">
-                  {"<"}FR{"/>"}{" "}
+                  {"<"} <span className="text-primary">FR</span> {"/>"}
                 </Nav.Link>
               </Nav.Item>
             </Nav>

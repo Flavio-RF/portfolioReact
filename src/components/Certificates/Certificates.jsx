@@ -4,11 +4,17 @@ import { Col, Row, Container } from "react-bootstrap";
 import CertificateCards from "./CertificateCards";
 import fullStack from "../../assets/img/cursos/HA_FULL-STACK-PART-TIME_CertificadoDeAsistencia_FlavioRodriguez_2022.png";
 import fullStackPdf from "../../assets/img/cursos/HA_FullStack.pdf";
+import { ThemeContext } from "../../App";
+import { useContext } from "react";
 
-function Certificates({ dark }) {
+function Certificates() {
+  const { dark } = useContext(ThemeContext);
+
   return (
-    <Container fluid className={dark ? "bg-dark text-white py-5" : "py-5"}>
-      <hr />
+    <Container
+      fluid
+      className={dark ? "bg-dark text-white py-5 p-md-5" : "py-5 p-md-5"}
+    >
       <h2 id="Certificates" className="fs-1 fw-bold text-center py-5">
         Certificados
       </h2>
@@ -22,8 +28,8 @@ function Certificates({ dark }) {
           Hack Academy
         </a>{" "}
       </h3>
-      <Row xs={1} sm={1} md={1} lg={2} className="mx-md-3 ">
-        <Col className="">
+      <Row xs={1} lg={2} className="mx-md-3 justify-content-xl-center">
+        <Col className="" xxl={5}>
           <Card>
             <Card.Img variant="top" src={fullStack} />
             <Card.Body className={dark && "bg-darkCustom"}>
@@ -53,7 +59,7 @@ function Certificates({ dark }) {
             </Card.Body>
           </Card>
         </Col>
-        <Col>
+        <Col xxl={5}>
           <Card className="mt-4 mt-sm-4 mt-md-0 text-center">
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="fw-bold mb-3">

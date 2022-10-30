@@ -1,5 +1,5 @@
 import { Container, Card, Col, Row, Collapse, Button } from "react-bootstrap";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 
@@ -7,15 +7,17 @@ import Chat from "../../assets/img/chat.png";
 import Notas from "../../assets/img/notas.png";
 import Api from "../../assets/img/api.png";
 import "./project.css";
+import { ThemeContext } from "../../App";
 
-function Projects({ dark }) {
+function Projects() {
+  const { dark } = useContext(ThemeContext);
+
   const [open, setOpen] = useState(false);
   const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
 
   return (
-    <Container fluid className={dark ? "bg-dark text-white py-5" : "py-5"}>
-      <hr />
+    <Container fluid className={dark ? "bg-dark text-white p-5" : "p-5"}>
       <h4 id="Projects" className="fs-1 fw-bold text-center py-5 mb-5">
         Mis proyectos personales
       </h4>
@@ -24,9 +26,9 @@ function Projects({ dark }) {
         sm={2}
         md={2}
         lg={3}
-        className="g-4 mx-md-3 justify-content-center"
+        className="g-4 mx-md-3 justify-content-center "
       >
-        <Col>
+        <Col xxl={3}>
           <Card border={!dark && "dark"} className="h-100">
             <Card.Img variant="top" className="img" src={Chat} alt="Chat" />
             <Card.Body className={dark && "bg-darkCustom"}>
@@ -46,7 +48,7 @@ function Projects({ dark }) {
                 >
                   Ver mas detalles
                 </Button>
-                <div>
+                <div className="d-flex ms-3">
                   <Card.Link
                     href="https://github.com/Flavio-RF/Chat"
                     target="_blank"
@@ -70,7 +72,7 @@ function Projects({ dark }) {
             </Card.Body>
           </Card>
         </Col>
-        <Col>
+        <Col xxl={3}>
           <Card border={!dark && "dark"} className="h-100">
             <Card.Img variant="top" className="img" src={Notas} alt="Notas" />
             <Card.Body className={dark && "bg-darkCustom"}>
@@ -90,7 +92,7 @@ function Projects({ dark }) {
                 >
                   Ver mas detalles
                 </Button>
-                <div>
+                <div className="d-flex ms-3">
                   <Card.Link
                     href="https://github.com/Flavio-RF/notes"
                     target="_blank"
@@ -114,7 +116,7 @@ function Projects({ dark }) {
             </Card.Body>
           </Card>
         </Col>
-        <Col>
+        <Col xxl={3}>
           <Card border={!dark && "dark"} className="h-100">
             <Card.Img variant="top" className="img" src={Api} alt="api" />
             <Card.Body className={dark && "bg-darkCustom"}>
@@ -134,7 +136,7 @@ function Projects({ dark }) {
                 >
                   Ver mas detalles
                 </Button>
-                <div>
+                <div className="d-flex ms-3">
                   <Card.Link
                     href="https://github.com/Flavio-RF/ProyectoFinal-Backend-avanzado"
                     target="_blank"

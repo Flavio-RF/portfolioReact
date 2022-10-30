@@ -6,23 +6,26 @@ import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Project/Projects";
 import Footer from "./components/Footer/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
+import { createContext, useState } from "react";
+
+export const ThemeContext = createContext();
 
 function App() {
   const [dark, setDark] = useState(true);
-  const darkTheme = () => {
-    !dark ? setDark(true) : setDark(false);
+  const toggleTheme = () => {
+    setDark((prev) => !prev);
+    // segunel valor anterior, cambio al opuesto (dark ? light o al contrario)
   };
   return (
-    <>
-      <Navbar setDatk={setDark} dark={dark} darkTheme={darkTheme} />
-      <Header dark={dark} />
-      <About dark={dark} />
-      <Certificates dark={dark} />
-      <Projects dark={dark} />
-      <Contact dark={dark} />
-      <Footer dark={dark} />
-    </>
+    <ThemeContext.Provider value={{ dark, toggleTheme }}>
+      <Navbar />
+      <Header />
+      <About />
+      <Certificates />
+      <Projects />
+      <Contact />
+      <Footer />
+    </ThemeContext.Provider>
   );
 }
 

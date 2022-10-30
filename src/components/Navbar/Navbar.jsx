@@ -1,5 +1,5 @@
 import "./navbar.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   Container,
   Offcanvas,
@@ -9,8 +9,11 @@ import {
   Nav,
 } from "react-bootstrap";
 import { BsLightbulbFill } from "react-icons/bs";
+import { ThemeContext } from "../../App";
 
-function Navegation({ dark, darkTheme }) {
+function Navegation() {
+  const { dark, toggleTheme } = useContext(ThemeContext);
+
   const [y, setY] = useState(window.scrollY);
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -38,7 +41,7 @@ function Navegation({ dark, darkTheme }) {
     >
       <Container>
         <Navbar.Brand
-          className={!dark ? "fw-bold fs-3" : "fw-bold fs-3 text-white"}
+          className={!dark ? "fw-bold fs-4" : "fw-bold fs-4 text-white"}
           href="#"
         >
           {"<"} <span className="text-primary">FR</span> {"/>"}
@@ -79,13 +82,13 @@ function Navegation({ dark, darkTheme }) {
             <Form className={width <= 765 ? "text-center my-3" : "ms-md-3"}>
               {dark ? (
                 <Button
-                  onClick={darkTheme}
+                  onClick={toggleTheme}
                   variant={width <= 765 ? "outline-dark" : "outline-light"}
                 >
                   <BsLightbulbFill size={20} />
                 </Button>
               ) : (
-                <Button onClick={darkTheme} variant="outline-dark">
+                <Button onClick={toggleTheme} variant="outline-dark">
                   <BsLightbulbFill size={20} style={{ color: "yellow" }} />
                 </Button>
               )}
