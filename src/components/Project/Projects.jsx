@@ -4,8 +4,8 @@ import { FaGithub } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 
 // import Chat from "../../assets/img/chat.png";
-import Notas from "../../assets/img/notas.png";
-import Api from "../../assets/img/api.png";
+// import Notas from "../../assets/img/projects/notas.png";
+// import Api from "../../assets/img/projects/api.png";
 import "./project.css";
 import { ThemeContext } from "../../App";
 
@@ -75,7 +75,7 @@ function Projects() {
         </Col>
         <Col xxl={3}>
           <Card border={!dark && "dark"} className="h-100">
-            <Card.Img variant="top" className="img" src={Notas} alt="Notas" />
+            <Card.Img variant="top" className="img" src={""} alt="Notas" />
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="d-flex justify-content-around">
                 <div className="fs-3 mb-2">Notas</div>
@@ -119,7 +119,7 @@ function Projects() {
         </Col>
         <Col xxl={3}>
           <Card border={!dark && "dark"} className="h-100">
-            <Card.Img variant="top" className="img" src={Api} alt="api" />
+            <Card.Img variant="top" className="img" src={""} alt="api" />
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="d-flex justify-content-around">
                 <div className="fs-3 mb-2">API</div>

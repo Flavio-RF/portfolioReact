@@ -4,31 +4,17 @@ import bgResponsive from "../../assets/img/bg_responsive.webp";
 import profile from "../../assets/img/profile.jpeg";
 import CV from "../../assets/img/cursos/CV-Flavio-Rodriguez.pdf";
 
-import { useState, useEffect } from "react";
 import { FaFileDownload } from "react-icons/fa";
+import useWindowsDimensions from "../../hooks/useWindowsDimensions";
 
 function Header() {
-  const [width, setWidth] = useState({
-    dynamicWidth: window.innerWidth,
-  });
-
-  const setDimension = () => {
-    setWidth({ dynamicWidth: window.innerWidth });
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", setDimension);
-
-    return () => {
-      window.removeEventListener("resize", setDimension);
-    };
-  }, []);
+  const { width } = useWindowsDimensions();
 
   return (
     <header id="home" className="home" style={{ backgroundColor: "#000000cc" }}>
       <img
         className="home__background"
-        src={width.dynamicWidth >= 780 ? bg : bgResponsive}
+        src={width >= 780 ? bg : bgResponsive}
         alt="backgroundImg"
       />
 
@@ -44,16 +30,14 @@ function Header() {
         <div className="home__description d-flex flex-column align-items-center">
           <span
             className={
-              width.dynamicWidth > 500
-                ? "home__title fw-bold"
-                : "fs-1 text-primary fw-bold"
+              width > 500 ? "home__title fw-bold" : "fs-1 text-primary fw-bold"
             }
           >
             Flavio Rodriguez
           </span>
           <span
             className={
-              width.dynamicWidth > 500
+              width > 500
                 ? "home__title--secondary fw-bold"
                 : "fs-2 text-white fw-bold"
             }
