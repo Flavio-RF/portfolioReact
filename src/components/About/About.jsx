@@ -36,11 +36,11 @@ function About() {
             En el verano de 2021-2022 empecé a programar de manera autodidacta
             con cursos de Udemy, al ver que no seria tan facil decidí dar el
             siguiente paso de comenzar a cursar en Hack Academy trabajando con
-            proyectos reales y resultados notables. En cuanto a mi siempre busco
-            perfeccionar mis habilidades e ir avanzando, soy exigente conmigo
-            mismo sin dejar de buscar ayuda cuando se lo necesita, tengo muy
-            claro que la comunicacion siempre es la clave en cualquier equipo
-            laboral.
+            proyectos reales y resultados notables. En cuanto a mi, siempre
+            busco perfeccionar mis habilidades e ir avanzando, soy exigente
+            conmigo mismo sin dejar de buscar ayuda cuando se lo necesita, tengo
+            muy claro que la comunicacion siempre es la clave en cualquier
+            equipo laboral.
           </p>
         </Col>
         <Col className="mt-5" xs={12} xxl={5}>
