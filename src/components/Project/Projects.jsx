@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 
-import Chat from "../../assets/img/chat.png";
+// import Chat from "../../assets/img/chat.png";
 import Notas from "../../assets/img/notas.png";
 import Api from "../../assets/img/api.png";
 import "./project.css";
@@ -31,7 +31,7 @@ function Projects() {
       >
         <Col xxl={3}>
           <Card border={!dark && "dark"} className="h-100">
-            <Card.Img variant="top" className="img" src={Chat} alt="Chat" />
+            <Card.Img variant="top" className="img" src={""} alt="Chat" />
             <Card.Body className={dark && "bg-darkCustom"}>
               <Card.Title className="d-flex justify-content-around">
                 <div className="fs-3 mb-2">Chat</div>
