@@ -18,7 +18,6 @@ function Projects() {
 
   return (
     <Container fluid className={dark ? "bg-dark text-white p-5" : "p-5"}>
-      <hr />
       <h4 id="Projects" className="fs-1 fw-bold text-center py-5 mb-5">
         Mis proyectos personales
       </h4>

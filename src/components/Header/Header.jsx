@@ -2,7 +2,7 @@ import "./header.css";
 import bg from "../../assets/img/bg.webp";
 import bgResponsive from "../../assets/img/bg_responsive.webp";
 import profile from "../../assets/img/profile.jpeg";
-import CV from "../../assets/img/cursos/CV-Flavio-Rodriguez.pdf";
+import CV from "../../assets/img/cursos/CV_Flavio_Rodriguez.pdf";
 
 import { FaFileDownload } from "react-icons/fa";
 import useWindowsDimensions from "../../hooks/useWindowsDimensions";

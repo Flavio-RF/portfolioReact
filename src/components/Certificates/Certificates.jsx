@@ -16,8 +16,6 @@ function Certificates() {
       fluid
       className={dark ? "bg-dark text-white py-5 p-md-5" : "py-5 p-md-5"}
     >
-      <hr />
-
       <h2 id="Certificates" className="fs-1 fw-bold text-center py-5">
         Certificados
       </h2>

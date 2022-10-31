@@ -61,7 +61,6 @@ function Contact() {
 
   return (
     <Container fluid className={dark ? "bg-dark text-white py-5" : "py-5 "}>
-      <hr />
       <h5 id="Contact" className="fs-1 text-center py-5  fw-bold ">
         Contacto
       </h5>
